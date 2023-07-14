@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/fragmentFirst">
+
+    <fragment
+        android:id="@+id/fragmentFirst"
+        android:name="com.shruti.jetpacknavigation.FragmentFirst"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/fragmetSecond"
+        android:name="com.shruti.jetpacknavigation.FragmetSecond"
+        android:label="fragment_fragmet_second"
+        tools:layout="@layout/fragment_fragmet_second" />
+</navigation>
