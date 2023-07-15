@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
-import com.shruti.jetpacknavigation.databinding.FragmentFragmetSecondBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,15 +13,14 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FragmetSecond.newInstance] factory method to
+ * Use the [FragmentThird.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmetSecond : Fragment() {
+class FragmentThird : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding : FragmentFragmetSecondBinding
-    var name = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,22 +33,10 @@ class FragmetSecond : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFragmetSecondBinding.inflate(layoutInflater)
-        return binding.root
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_fragmet_second, container, false)
+        return inflater.inflate(R.layout.fragment_third, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        arguments?.let {
-            name = it.getString("name")?:""
-        }
-        binding.tvDataSent.setText(name)
-       binding.btsecond.setOnClickListener {
-           findNavController().navigate(R.id.action_fragmetSecond_to_fragmentThird)
-       }
-    }
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -60,12 +44,12 @@ class FragmetSecond : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmetSecond.
+         * @return A new instance of fragment FragmentThird.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FragmetSecond().apply {
+            FragmentThird().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

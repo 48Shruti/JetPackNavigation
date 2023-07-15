@@ -9,10 +9,35 @@
         android:id="@+id/fragmentFirst"
         android:name="com.shruti.jetpacknavigation.FragmentFirst"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_fragmentFirst_to_fragmetSecond"
+            app:destination="@id/fragmetSecond"
+
+
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/fragmetSecond"
         android:name="com.shruti.jetpacknavigation.FragmetSecond"
         android:label="fragment_fragmet_second"
-        tools:layout="@layout/fragment_fragmet_second" />
+        tools:layout="@layout/fragment_fragmet_second" >
+        <action
+            android:id="@+id/action_fragmetSecond_to_fragmentThird"
+            app:destination="@id/fragmentThird"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/fragmentFirst"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentThird"
+        android:name="com.shruti.jetpacknavigation.FragmentThird"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
 </navigation>
